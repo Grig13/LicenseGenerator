@@ -1,0 +1,31 @@
+
+<div>
+    Name:
+    <input [(ngModel)]="customerName" placeholder="Name" />
+</div>
+<br/>
+<div>
+    Email:
+    <input [(ngModel)]="customerEmail" placeholder="Email" />
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="addCustomer()">Add Client</button>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of customers">
+            <td>{{customer.name}}</td>
+            <td>{{customer.email}}</td>
+            <td>
+                <button [ngStyle]="{float:'right'}"(click)="deleteCustomer(customer)" >Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
